@@ -7,16 +7,26 @@ import jakarta.persistence.Id;
 public class Employee {
     @Id
     private String id;
-    private String name;
+    private String username;
+    private String password;
     private int age;
 
     public Employee() {
     }
 
-    public Employee(String id, String name, int age) {
+    public Employee(String id, String username, int age,String password) {
         this.id = id;
-        this.name = name;
+        this.username = username;
         this.age = age;
+        this.password=password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getId() {
@@ -27,12 +37,12 @@ public class Employee {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = name;
     }
 
     public int getAge() {
