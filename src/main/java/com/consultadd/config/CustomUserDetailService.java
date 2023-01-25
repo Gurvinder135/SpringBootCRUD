@@ -7,7 +7,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CustomUserDetailService implements UserDetailsService {
     @Autowired
     EmployeeRepository employeeRepository;
@@ -18,7 +20,7 @@ public class CustomUserDetailService implements UserDetailsService {
         if(emp==null){
           throw new UsernameNotFoundException("User not found");
         } else{
-            return User.withDefaultPasswordEncoder().username(emp.getUsername()).password(emp.getPassword()).roles().build();
+            return new UserDetailService(emp);
         }
     }
 }

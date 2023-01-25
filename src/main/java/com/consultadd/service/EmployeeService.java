@@ -12,7 +12,7 @@ import java.util.List;
 public class EmployeeService {
 
     @Autowired
-    EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     public List<Employee> getEmployees(){
         List<Employee> employeeList=employeeRepository.findAll();

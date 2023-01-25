@@ -10,15 +10,24 @@ public class Employee {
     private String username;
     private String password;
     private int age;
-
+    private String role;
     public Employee() {
     }
 
-    public Employee(String id, String username, int age,String password) {
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Employee(String id, String username, int age, String password, String role) {
         this.id = id;
         this.username = username;
         this.age = age;
         this.password=password;
+        this.role=role;
     }
 
     public String getPassword() {
@@ -41,8 +50,8 @@ public class Employee {
         return username;
     }
 
-    public void setUsername(String name) {
-        this.username = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getAge() {
